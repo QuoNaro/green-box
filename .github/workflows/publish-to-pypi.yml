@@ -1,0 +1,30 @@
+name: Publish to PyPi
+
+on:
+  push:
+    branches: ["main"]
+    
+jobs:
+  poetry-building:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: (🧔‍♂️) Checkout
+        uses : actions/checkout@v3
+      
+      - name: (🐍) Setup Python 
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.x"
+
+      - name: (📝) Install Poetry
+        run: python -m pip install poetry
+
+      - name : (🙋‍♂️) Authorization in PyPi
+        run : poetry config pypi-token.pypi ${{ secrets.PYPI_API }}
+      
+      - name: (🔨) Build Project 
+        run : poetry build
+
+      - name : (📦) Publish package  to PyPi
+        run : poetry publish
