@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "green-box"
-version = "1.0.0"
+version = "1.0.1"
 description = "Simple data collection from Google Tables"
 authors = ["QuoNaro <QuoNaro@mail.ru>"]
 readme = "README.md"

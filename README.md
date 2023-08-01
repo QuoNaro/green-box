@@ -13,13 +13,12 @@ pip install green-box
 
 ## **Использование**
 Из всей ссылки берется только ID!
->https://docs.google.com/spreadsheets/d/***1O174ca048KT5YMYkDADzQvzIJEWUMADj_0ciLAQOt34***
-
+> <img src="https://imgur.com/wOMkbUe.png" width="" height="" />
 
 ```python
 from green_box import Table
 
-table = Table('1O174ca048KT5YMYkDADzQvzIJEWUMADj_0ciLAQOt34','Лист1').rows
+table = Table('1O174ca048KT5YMYkDADzQvzIJEWUMADj_0ciLAQOt34','Лист1').rows()
 
 ```
 ```

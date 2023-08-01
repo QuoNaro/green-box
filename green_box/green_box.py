@@ -31,7 +31,6 @@ class Table():
     
     self.__worksheet = workbook[__worksheet]
 
-  @property
   def columns(self) -> Matrix:
     columns = []
     for column in self.__worksheet.iter_cols():
@@ -39,7 +38,6 @@ class Table():
       columns.append(column)
     return Matrix(columns)
   
-  @property
   def rows(self) -> Matrix:
     rows = []
     for row in self.__worksheet.iter_rows():
