@@ -10,6 +10,28 @@ class Matrix(list):
     while not any(self[-1]):
       self.pop(-1)
       
+  def remove_all_void(self) -> None:
+    self.remove_void()
+    self.reverse()
+    self.remove_void()
+    self.reverse()
+  
+  def replace_none(self,new) -> None:
+    for column in self:
+      for i,value in enumerate(column):
+        if value is None:
+          column[i] = new
+    
+  def remove_none(self) -> None:
+    for index,column in enumerate(self):
+      column = [i for i in column if i is not None]
+      self[index] = column
+  
+  def float_to_integer(self) -> None:
+    for index,column in enumerate(self):
+      column = list(map(lambda x : int(x) if isinstance(x,float) else x, column))
+      self[index] = column
+  
   def get_indexes(self, __value) -> list:
     array = numpy.array(self)
     indexes = numpy.argwhere(array == __value).tolist()
