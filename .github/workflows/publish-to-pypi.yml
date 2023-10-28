@@ -1,7 +1,8 @@
 name: Publish to PyPi
 
 on:
-  release:
+  push:
+    branches: ["main"]
     
 jobs:
   poetry-building:
